@@ -1,0 +1,1 @@
+savedcmd_/users/Etu8/28720888/pnl/lab-4/hanging.ko := ld -r -m elf_x86_64 -z noexecstack --no-warn-rwx-segments --build-id=sha1  -T scripts/module.lds -o /users/Etu8/28720888/pnl/lab-4/hanging.ko /users/Etu8/28720888/pnl/lab-4/hanging.o /users/Etu8/28720888/pnl/lab-4/hanging.mod.o;  make -f ./arch/x86/Makefile.postlink /users/Etu8/28720888/pnl/lab-4/hanging.ko

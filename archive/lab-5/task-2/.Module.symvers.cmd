@@ -1,0 +1,1 @@
+savedcmd_/users/nfs/Etu8/28720888/pnl/lab-5/task-2/Module.symvers :=  scripts/mod/modpost        -o /users/nfs/Etu8/28720888/pnl/lab-5/task-2/Module.symvers -T /users/nfs/Etu8/28720888/pnl/lab-5/task-2/modules.order -i Module.symvers -e 

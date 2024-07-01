@@ -1,0 +1,1 @@
+savedcmd_/home/harena/Documents/M1/S2/pnl/LAB/LAB5/task1/modules.order := {   echo /home/harena/Documents/M1/S2/pnl/LAB/LAB5/task1/hello_p.o; :; } > /home/harena/Documents/M1/S2/pnl/LAB/LAB5/task1/modules.order

@@ -1,0 +1,1 @@
+savedcmd_/root/pnl/labs/5/task-4/taskmonitor.ko := ld -r -m elf_x86_64 -z noexecstack --no-warn-rwx-segments --build-id=sha1  -T scripts/module.lds -o /root/pnl/labs/5/task-4/taskmonitor.ko /root/pnl/labs/5/task-4/taskmonitor.o /root/pnl/labs/5/task-4/taskmonitor.mod.o;  make -f ./arch/x86/Makefile.postlink /root/pnl/labs/5/task-4/taskmonitor.ko

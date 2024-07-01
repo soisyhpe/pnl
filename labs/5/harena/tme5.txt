@@ -1,0 +1,42 @@
+TASK1 
+	Q1 - 
+	Q2 - 
+
+TASK2 
+
+	Q2 - always define the fops as a static 
+		struct file_operations is among file struct, so when we create the device with register_chrdev, it'll an entruy of file with value of fops. Later this fops(reference so outside of hell
+		oioctl function, his value will be meaning less) will be used for ioctl. 
+
+TASK3 
+ 	Q1 - struct PID stores informtion about a process 
+		a pid_t value is referred to this struct
+		a process is referenced to this struct pid 
+		there is a reference counter (if there is process referring to him)
+		contains a spinlock for synchronization
+		It allows to know if a pid value is available
+		
+	Q2 - Time unit of utime/stime : it's in tick :  jiffies
+			irqtime_account_process_tick : function to understand it 
+
+
+TASK4
+
+	Q1 - 
+	Q2 - we call put_pid() when we unload 
+		asmlinkage is a gcc option : it means that argument will be on CPU stack not into
+		register
+    Q3 - for thread : into the loop (if using one), always check if the 
+	thread should stop or not : kthread_should_stop  	
+
+	About thread creation : 
+		- kthread_run -> kthread_create -> create_thread_on_node : 
+			in create_thread_on_node : create a thread_info ,
+									   add it to list create_thread_list
+									   wakes up kthreadd (daemon thread that creates thread)
+									   kthreadd iterate on the create_thread_list (if empty : sched() [sleeping])
+									      for each entry, create a thread with task_struct
+
+	so  
+
+TASK5

@@ -1,0 +1,1 @@
+savedcmd_/users/nfs/Etu8/28720888/pnl/lab-5/task-2/helloioctl.mod := printf '%s\n'   helloioctl.o | awk '!x[$$0]++ { print("/users/nfs/Etu8/28720888/pnl/lab-5/task-2/"$$0) }' > /users/nfs/Etu8/28720888/pnl/lab-5/task-2/helloioctl.mod

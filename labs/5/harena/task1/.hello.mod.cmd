@@ -1,0 +1,1 @@
+savedcmd_/home/harena/Documents/M1/S2/pnl/LAB/LAB5/task1/hello.mod := printf '%s\n'   hello.o | awk '!x[$$0]++ { print("/home/harena/Documents/M1/S2/pnl/LAB/LAB5/task1/"$$0) }' > /home/harena/Documents/M1/S2/pnl/LAB/LAB5/task1/hello.mod

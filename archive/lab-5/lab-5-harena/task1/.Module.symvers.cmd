@@ -1,0 +1,1 @@
+savedcmd_/home/harena/Documents/M1/S2/pnl/LAB/LAB5/task1/Module.symvers :=  scripts/mod/modpost        -o /home/harena/Documents/M1/S2/pnl/LAB/LAB5/task1/Module.symvers -T /home/harena/Documents/M1/S2/pnl/LAB/LAB5/task1/modules.order -i Module.symvers -e 
