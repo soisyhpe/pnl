@@ -1,0 +1,83 @@
+PATH=~/helix-23.10-x86_64-linux:$PATH
+
+#
+# Environement variables
+#
+
+export PNL_DIR=/root/pnl
+export RESOURCES_DIR=$PNL_DIR/resources
+export PNL_VMS_DIR=$PNL_DIR/vms
+export PNL_LABS_DIR=$PNL_DIR/labs
+export PNL_SCRIPTS_DIR=$PNL_DIR/scripts
+
+#
+# Useful scripts
+#
+
+alias run="$PNL_SCRIPTS_DIR/run.sh"
+alias setup-create="$PNL_SCRIPTS_DIR/setup.sh"
+alias setup-clear="$PNL_SCRIPTS_DIR/clear-setup.sh"
+
+#
+# Labs
+#
+
+alias lab-1="cd $PNL_LABS_DIR/1/"
+alias lab-2="cd $PNL_LABS_DIR/2/"
+alias lab-3="cd $PNL_LABS_DIR/3/"
+alias lab-4="cd $PNL_LABS_DIR/4/"
+alias lab-5="cd $PNL_LABS_DIR/5/"
+alias lab-6="cd $PNL_LABS_DIR/6/"
+alias lab-7="cd $PNL_LABS_DIR/7/"
+alias lab-8="cd $PNL_LABS_DIR/8/"
+
+#
+# Project : Directories and paramaters
+#
+
+vm_name=meli-project
+vm_port=69000
+
+alias project-dir="cd $PNL_VMS_DIR/$vm_name"
+alias pdir="project-dir"
+
+alias project-share="cd $PNL_VMS_DIR/$vm_name/share"
+alias pshare="project-share"
+
+function project-run() {
+  run $vm_name $vm_port
+}
+
+alias project-run='project-run'
+alias pr="project-run"
+
+#
+# Project : Repository management
+#
+
+project_repo=$PNL_DIR/project/projet_PNL
+
+alias project-repo="cd $project_repo"
+alias prepo="project-repo"
+
+function project-build() {
+  local initial_path="$(pwd)"
+
+  cd $project_repo/scripts
+  ./build_module.sh $vm_name
+
+  cd "$initial_path"
+}
+
+alias project-build='project-build'
+alias pb="project-build"
+
+alias pbr="project-build && project-run"
+
+#
+# LSP : Bash
+#
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
