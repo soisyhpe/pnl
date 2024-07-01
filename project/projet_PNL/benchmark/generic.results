@@ -1,0 +1,150 @@
+
+[TEST 1] -----------------------------------------------------------------------
+Nom du test : Écriture et lecture au debut du fichier
+Fichier : 4
+
+Écriture des données
+Offset = 0
+Temps mis : 0.000259 secondes
+Données écrites : 
+bonjour, est-ce que ca marche ?
+Données écrites ou lues : 31 octets sur 31 octets
+
+Lecture des données écrites
+Offset = 0
+Temps mis : 0.000012 secondes
+Données lues : bonjour, est-ce que ca marche ?
+bonjour, est-ce que ca marche ?
+Données écrites ou lues : 31 octets sur 31 octets
+
+[TEST 1] -----------------------------------------------------------------------
+
+
+[TEST 2] -----------------------------------------------------------------------
+Nom du test : Écriture et lecture au milieu du fichier
+Fichier : 4
+
+Écriture des données
+Offset = 10
+Temps mis : 0.000010 secondes
+Données écrites : COUCOU !
+COUCOU !
+Données écrites ou lues : 8 octets sur 8 octets
+
+Lecture des données
+Offset = 3
+Temps mis : 0.000005 secondes
+Données lues : 
+jour, eCOUCOU !e ca marche ?
+
+[TEST 2] -----------------------------------------------------------------------
+
+
+[TEST 3] -----------------------------------------------------------------------
+Nom du test : Écriture et lecture après la fin du fichier
+Fichier : 4
+
+Écriture des données
+Offset = 35
+Temps mis : 0.000006 secondes
+Données écrites : hellooooo
+Données écrites ou lues : 9 octets sur 9 octets
+
+Lecture qui dépasse la taille du contenu du fichier
+Offset = 0
+Temps mis : 0.000140 secondes
+Données lues : 44 octets
+bonjour, eCOUCOU !e ca marche ?\0\0\0\0hellooooo\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0
+\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0
+\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0
+
+Lecture qui commence après la fin du fichier
+Offset = 48
+Temps mis : 0.000007 secondes
+Données lues : 0 octets
+
+[TEST 3] -----------------------------------------------------------------------
+
+
+[TEST 4] -----------------------------------------------------------------------
+Nom du test : Écritures successives et lecture à la fin d'un gros fichier
+Fichier : 4
+
+Écriture des données
+Offset = 0
+Temps mis : 0.000173 secondes
+Données écrites : 5130 octets
+
+Lecture des données
+Offset = 0
+Temps mis : 0.000109 secondes
+Données lues : 5130 octets
+
+[TEST 4] -----------------------------------------------------------------------
+
+
+[TEST 5] -----------------------------------------------------------------------
+Nom du test : Écriture à plusieurs reprises n'importe où du fichier et lecture
+Fichier : 4
+
+Écriture des données
+Offset = aléatoire
+Temps mis : 0.000057 secondes
+Données écrites : 140 octets
+
+Lecture des données
+Offset = 0
+Temps mis : 0.000106 secondes
+
+Lecture des données
+Offset = 0
+Temps mis : 0.000105 secondes
+
+
+[TEST 5] -----------------------------------------------------------------------
+
+
+[TEST 6] -----------------------------------------------------------------------
+Nom du test : Écriture à cheval sur deux blocs et lecture
+Fichier : 4
+
+Block size = 4096 octets
+
+Écriture des données
+Offset = 4080
+Temps mis : 0.000007 secondes
+Données écrites : salut, je m'éclate beaucoup trop avec Nicolas, Mélissa et Eros en PNL
+Données écrites ou lues : 71 octets sur 71 octets
+
+Lecture des données à partir du bon offset
+Offset = 4080
+Temps mis : 0.000006 secondes
+Données lues : salut, je m'éclate beaucoup trop avec Nicolas, Mélissa et Eros en PNL
+Données écrites ou lues : 71 octets sur 71 octets
+
+Lecture des données à partir du 2e bloc
+Offset = 4096
+Temps mis : 0.000012 secondes
+Données lues : ate beaucoup trop avec Nicolas, Mélissa et Eros en PNLing elit. Aliqua
+Données écrites ou lues : 71 octets sur 71 octets
+
+[TEST 6] -----------------------------------------------------------------------
+
+
+[TEST 7] -----------------------------------------------------------------------
+Nom du test : Ecriture d'un fichier plus gros que la taille maximum d'un fichier
+Fichier : 4
+
+Écriture des données
+Offset = 0
+Données écrites ou lues : 4194257 octets sur 4218912 octets [!!! INCOHÉRENCE !!!]
+Temps mis : 0.093539 secondes
+Données écrites : 4194257 octets (taille initialement demandée : 4218912 octets)
+
+Lecture des données
+Offset = 0
+Temps mis : 0.074299 secondes
+Données lues : 4194304 octets
+
+[TEST 7] -----------------------------------------------------------------------
+
